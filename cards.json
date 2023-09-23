@@ -1,0 +1,27 @@
+{
+	"card_type": ["CROP", "BOOST", "SABOTAGE"],
+	"CROP": {
+		"card_name": ["Potato"],
+		"card_detail":{
+			"potato": {
+
+			}
+		}
+	},
+	"BOOST": {
+		"card_name": ["Tears of Inari"],
+		"card_detail":{
+			"potato": {
+
+			}
+		}
+	},
+	"SABOTAGE": {
+		"card_name": ["Water Pollutant"],
+		"card_detail":{
+			"potato": {
+
+			}
+		}
+	}
+}

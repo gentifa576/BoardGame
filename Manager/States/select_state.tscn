@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7ccike18476a"]
+
+[ext_resource type="Script" path="res://Manager/States/select_state.gd" id="1_q0irg"]
+
+[node name="SelectState" type="Node2D"]
+script = ExtResource("1_q0irg")
+state = 3

@@ -1,0 +1,6 @@
+Node2D
+PanelContainer
+CollisionShape2D
+StaticBody2D
+Label
+Sprite2D

@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctkqej41qsyj8"]
+
+[ext_resource type="PackedScene" uid="uid://bkf0m5vn6jvq4" path="res://Scene/card.tscn" id="1_knofg"]
+[ext_resource type="Texture2D" uid="uid://bqtbysxwt01ct" path="res://Sprite/potato.png" id="2_prmro"]
+[ext_resource type="PackedScene" uid="uid://brtf5dndwui5s" path="res://Manager/States/crop_state.tscn" id="3_7ccd4"]
+[ext_resource type="PackedScene" uid="uid://jh55k3cqwm3f" path="res://Manager/States/deck_state.tscn" id="4_hnslu"]
+[ext_resource type="PackedScene" uid="uid://dpdautgutbopo" path="res://Manager/States/hand_state.tscn" id="5_unw6n"]
+[ext_resource type="PackedScene" uid="uid://w6fnju55npqu" path="res://Manager/States/play_state.tscn" id="6_4iemn"]
+
+[node name="Card" instance=ExtResource("1_knofg")]
+card_name = "Potato"
+
+[node name="Image" parent="ImageComponent" index="1"]
+texture = ExtResource("2_prmro")
+
+[node name="CropState" parent="StateManager" index="0" instance=ExtResource("3_7ccd4")]
+
+[node name="DeckState" parent="StateManager" index="1" instance=ExtResource("4_hnslu")]
+
+[node name="HandState" parent="StateManager" index="2" instance=ExtResource("5_unw6n")]
+
+[node name="PlayState" parent="StateManager" index="3" node_paths=PackedStringArray("card") instance=ExtResource("6_4iemn")]
+card = NodePath("../..")

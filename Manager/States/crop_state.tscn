@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://brtf5dndwui5s"]
+
+[ext_resource type="Script" path="res://Manager/States/crop_state.gd" id="1_cedct"]
+
+[node name="CropState" type="Node2D"]
+script = ExtResource("1_cedct")

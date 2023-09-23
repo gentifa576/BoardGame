@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://w6fnju55npqu"]
+
+[ext_resource type="Script" path="res://Manager/States/play_state.gd" id="1_g43wi"]
+
+[node name="PlayState" type="Node2D"]
+script = ExtResource("1_g43wi")
+state = 2

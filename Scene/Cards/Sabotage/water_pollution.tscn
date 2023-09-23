@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://x75jcvalqocg"]
+
+[ext_resource type="PackedScene" uid="uid://bkf0m5vn6jvq4" path="res://Scene/card.tscn" id="1_3wni0"]
+[ext_resource type="Texture2D" uid="uid://br26pmm7gx5cm" path="res://Sprite/water_pollution.png" id="2_qnylq"]
+[ext_resource type="PackedScene" uid="uid://dpdautgutbopo" path="res://Manager/States/hand_state.tscn" id="3_e0ebb"]
+[ext_resource type="PackedScene" uid="uid://jh55k3cqwm3f" path="res://Manager/States/deck_state.tscn" id="4_igcew"]
+[ext_resource type="PackedScene" uid="uid://w6fnju55npqu" path="res://Manager/States/play_state.tscn" id="5_khyyv"]
+
+[node name="Card" instance=ExtResource("1_3wni0")]
+card_name = "Water Pollution"
+
+[node name="Image" parent="ImageComponent" index="1"]
+texture = ExtResource("2_qnylq")
+
+[node name="HandState" parent="StateManager" index="0" instance=ExtResource("3_e0ebb")]
+
+[node name="DeckState" parent="StateManager" index="1" instance=ExtResource("4_igcew")]
+
+[node name="PlayState" parent="StateManager" index="2" node_paths=PackedStringArray("card") instance=ExtResource("5_khyyv")]
+card = NodePath("../..")

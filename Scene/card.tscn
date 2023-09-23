@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkf0m5vn6jvq4"]
+
+[ext_resource type="Script" path="res://Scene/card.gd" id="1_2twc3"]
+[ext_resource type="PackedScene" uid="uid://d4bxnks2nggbf" path="res://Component/description_component.tscn" id="3_f2k7p"]
+[ext_resource type="PackedScene" uid="uid://dhhcqytdvew1v" path="res://Component/effect_component.tscn" id="3_slf4e"]
+[ext_resource type="Texture2D" uid="uid://p72n1eldogn1" path="res://Sprite/card_base.png" id="4_atti1"]
+[ext_resource type="PackedScene" uid="uid://dimd5tmg7csgy" path="res://Manager/state_manager.tscn" id="5_vsg22"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sc8dl"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5io5s"]
+
+[node name="Card" type="Node2D"]
+script = ExtResource("1_2twc3")
+
+[node name="DescriptionComponent" parent="." instance=ExtResource("3_f2k7p")]
+
+[node name="EffectComponent" parent="." instance=ExtResource("3_slf4e")]
+
+[node name="ImageComponent" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="ImageComponent"]
+texture = ExtResource("4_atti1")
+
+[node name="Image" type="Sprite2D" parent="ImageComponent"]
+
+[node name="Name" type="Label" parent="ImageComponent"]
+custom_minimum_size = Vector2(170, 80)
+offset_left = -84.0
+offset_top = 61.0
+offset_right = 86.0
+offset_bottom = 141.0
+scale = Vector2(0.981, 1)
+label_settings = SubResource("LabelSettings_sc8dl")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = -100.0
+offset_top = -150.0
+offset_right = 100.0
+offset_bottom = 150.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5io5s")
+
+[node name="StateManager" parent="." node_paths=PackedStringArray("card") instance=ExtResource("5_vsg22")]
+card = NodePath("..")
+
+[connection signal="gui_input" from="PanelContainer" to="." method="_on_panel_container_gui_input"]

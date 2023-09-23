@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://bti6ctqtexaci"]
+
+[ext_resource type="PackedScene" uid="uid://bkf0m5vn6jvq4" path="res://Scene/card.tscn" id="1_hdou6"]
+[ext_resource type="Texture2D" uid="uid://djilf6qhlt56q" path="res://Sprite/inari_tears.png" id="2_0bwsc"]
+[ext_resource type="PackedScene" uid="uid://jh55k3cqwm3f" path="res://Manager/States/deck_state.tscn" id="3_nvscd"]
+[ext_resource type="PackedScene" uid="uid://dpdautgutbopo" path="res://Manager/States/hand_state.tscn" id="4_jav08"]
+[ext_resource type="PackedScene" uid="uid://w6fnju55npqu" path="res://Manager/States/play_state.tscn" id="5_i7fmn"]
+
+[node name="Card" instance=ExtResource("1_hdou6")]
+card_name = "Tears of Inari"
+
+[node name="Image" parent="ImageComponent" index="1"]
+texture = ExtResource("2_0bwsc")
+
+[node name="DeckState" parent="StateManager" index="0" instance=ExtResource("3_nvscd")]
+
+[node name="HandState" parent="StateManager" index="1" instance=ExtResource("4_jav08")]
+
+[node name="PlayState" parent="StateManager" index="2" node_paths=PackedStringArray("card") instance=ExtResource("5_i7fmn")]
+card = NodePath("../..")

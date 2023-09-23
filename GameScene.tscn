@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://df16jhgm4obu2"]
+
+[ext_resource type="PackedScene" uid="uid://bti6ctqtexaci" path="res://Scene/Cards/Boost/inari_tears.tscn" id="1_4jupf"]
+[ext_resource type="PackedScene" uid="uid://ctkqej41qsyj8" path="res://Scene/Cards/Crop/potato.tscn" id="1_vf74c"]
+[ext_resource type="PackedScene" uid="uid://x75jcvalqocg" path="res://Scene/Cards/Sabotage/water_pollution.tscn" id="3_7s460"]
+[ext_resource type="PackedScene" uid="uid://ce43nkkd7rjma" path="res://Manager/game_manager.tscn" id="4_ve55j"]
+
+[node name="GameScene" type="Node2D"]
+
+[node name="Card" parent="." instance=ExtResource("1_4jupf")]
+position = Vector2(361, 1115)
+
+[node name="Card2" parent="." instance=ExtResource("1_vf74c")]
+position = Vector2(118, 1117)
+
+[node name="Card3" parent="." instance=ExtResource("3_7s460")]
+position = Vector2(594, 1114)
+
+[node name="GameManager" parent="." instance=ExtResource("4_ve55j")]
