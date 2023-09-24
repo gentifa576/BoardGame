@@ -1,6 +1,8 @@
 extends Node
 class_name StateBase
 
+signal transition_state(state: StateBase, new_state: StateManager.States)
+
 @export var state: StateManager.States
 @export var card: Card
 

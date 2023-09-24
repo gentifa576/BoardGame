@@ -17,4 +17,4 @@ texture = ExtResource("2_qnylq")
 [node name="DeckState" parent="StateManager" index="1" instance=ExtResource("4_igcew")]
 
 [node name="PlayState" parent="StateManager" index="2" node_paths=PackedStringArray("card") instance=ExtResource("5_khyyv")]
-card = NodePath("../..")
+card = NodePath("")

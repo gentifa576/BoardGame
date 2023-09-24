@@ -46,5 +46,3 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_5io5s")
 
 [node name="StateManager" parent="." node_paths=PackedStringArray("card") instance=ExtResource("5_vsg22")]
 card = NodePath("..")
-
-[connection signal="gui_input" from="PanelContainer" to="." method="_on_panel_container_gui_input"]

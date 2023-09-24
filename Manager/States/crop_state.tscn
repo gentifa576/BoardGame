@@ -3,4 +3,15 @@
 [ext_resource type="Script" path="res://Manager/States/crop_state.gd" id="1_cedct"]
 
 [node name="CropState" type="Node2D"]
+position = Vector2(238, 0)
 script = ExtResource("1_cedct")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+mouse_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-90, 85)

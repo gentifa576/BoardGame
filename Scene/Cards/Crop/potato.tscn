@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctkqej41qsyj8"]
+[gd_scene load_steps=9 format=3 uid="uid://ctkqej41qsyj8"]
 
 [ext_resource type="PackedScene" uid="uid://bkf0m5vn6jvq4" path="res://Scene/card.tscn" id="1_knofg"]
 [ext_resource type="Texture2D" uid="uid://bqtbysxwt01ct" path="res://Sprite/potato.png" id="2_prmro"]
 [ext_resource type="PackedScene" uid="uid://brtf5dndwui5s" path="res://Manager/States/crop_state.tscn" id="3_7ccd4"]
+[ext_resource type="Texture2D" uid="uid://deyk3j5u6htoi" path="res://Sprite/potato_plant.png" id="4_d70km"]
 [ext_resource type="PackedScene" uid="uid://jh55k3cqwm3f" path="res://Manager/States/deck_state.tscn" id="4_hnslu"]
 [ext_resource type="PackedScene" uid="uid://dpdautgutbopo" path="res://Manager/States/hand_state.tscn" id="5_unw6n"]
 [ext_resource type="PackedScene" uid="uid://w6fnju55npqu" path="res://Manager/States/play_state.tscn" id="6_4iemn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkm8d"]
+atlas = ExtResource("4_d70km")
 
 [node name="Card" instance=ExtResource("1_knofg")]
 card_name = "Potato"
@@ -13,11 +17,18 @@ card_name = "Potato"
 [node name="Image" parent="ImageComponent" index="1"]
 texture = ExtResource("2_prmro")
 
-[node name="CropState" parent="StateManager" index="0" instance=ExtResource("3_7ccd4")]
+[node name="CropState" parent="StateManager" index="0" node_paths=PackedStringArray("card") instance=ExtResource("3_7ccd4")]
+position = Vector2(75, -143)
+crop_sprite_sheet = SubResource("AtlasTexture_rkm8d")
+state = 4
+card = NodePath("../..")
 
 [node name="DeckState" parent="StateManager" index="1" instance=ExtResource("4_hnslu")]
 
-[node name="HandState" parent="StateManager" index="2" instance=ExtResource("5_unw6n")]
+[node name="HandState" parent="StateManager" index="2" node_paths=PackedStringArray("card") instance=ExtResource("5_unw6n")]
+card = NodePath("../..")
 
 [node name="PlayState" parent="StateManager" index="3" node_paths=PackedStringArray("card") instance=ExtResource("6_4iemn")]
 card = NodePath("../..")
+
+[connection signal="gui_input" from="PanelContainer" to="StateManager/HandState" method="_on_panel_container_gui_input"]

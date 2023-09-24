@@ -15,7 +15,3 @@ func _process(delta):
 
 func _physics_process(delta):
 	state_manager.state_dictionary[state_manager.current_state].on_update_physics(delta)
-
-func _on_panel_container_gui_input(event):
-	if event is InputEventMouseButton && event.pressed && event.button_index == MOUSE_BUTTON_LEFT:
-		Global.card_played.emit(self)

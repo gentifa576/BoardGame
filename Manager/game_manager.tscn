@@ -4,3 +4,10 @@
 
 [node name="GameManager" type="Node2D"]
 script = ExtResource("1_ipqee")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "End day"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
